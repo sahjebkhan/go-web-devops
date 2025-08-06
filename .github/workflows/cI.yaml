@@ -11,36 +11,48 @@ on:
       - 'README.md'
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Go 1.22
-      uses: actions/setup-go@v2
-      with:
-        go-version: 1.22
+      - name: Set up Go 1.22
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.22
 
-    - name: Build
-      run: go build -o go-web-app
+      - name: Print Go version
+        run: go version
 
-    - name: Test
-      run: go test ./...
-  
+      - name: Build
+        run: go build -o go-web-app
+
+      - name: Test
+        run: go test ./...
+
   code-quality:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v6
-      with:
-        version: v1.59.1
+      - name: Set up Go 1.22
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.22
+
+      - name: Print Go version
+        run: go version
+
+      - name: Run golangci-lint
+        uses: golangci/golangci-lint-action@v6
+        with:
+          version: v1.59.1
+          skip-cache: true
+
   
   push:
     runs-on: ubuntu-latest
