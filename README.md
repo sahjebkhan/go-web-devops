@@ -16,4 +16,11 @@ The server will start on port 8080. You can access it by navigating to `http://l
 
 ![Website](static/images/golang-website.png)
 
+## 🙏 Acknowledgements
+
+I would like to express my heartfelt gratitude to [@iam-veeramalla](https://github.com/iam-veeramalla) (Abhishek Veeramalla) for his invaluable guidance, support, and insights throughout the development of this project.  
+
+His expertise in DevOps practices and willingness to share knowledge played a significant role in shaping the final outcome.  
+
+
 
